@@ -29,14 +29,14 @@ boxes.forEach((element) => {
 // check winning condition
 function Checkwin() {
   let wins = [
-    [0, 1, 2,       2,11,0],
-    [3, 4, 5,       2,33,0],
-    [6, 7, 8,       2,55,0],
-    [0, 3, 6,       -8,33,90],
-    [1, 4, 7,       2,33,90],
-    [2, 5, 8,       12,33,90],
-    [0, 4, 8,       2,33,45],
-    [2, 4, 6,       2,33,-45],
+    [0, 1, 2, 5, 5, 0],
+    [3, 4, 5, 5, 15, 0],
+    [6, 7, 8, 5, 25, 0],
+    [0, 3, 6, -5, 15, 90],
+    [1, 4, 7, 5, 15, 90],
+    [2, 5, 8, 15, 15, 90],
+    [0, 4, 8, 5, 15, 45],
+    [2, 4, 6, 5, 15, 135],
   ];
   wins.forEach((e) => {
     let val1 = boxes[e[0]].innerText;
@@ -50,12 +50,12 @@ function Checkwin() {
         console.log(turn, "is winner");
         document.getElementsByTagName("img")[0].style.width = "200px";
         // bgmusic.play();
-        document.querySelector(".line").style.width = "26vw";
+        document.querySelector(".line").style.width = "20vw";
         // document.querySelector(".line").style.height = "o.5vh";
         
         document.querySelector(
           ".line"
-        ).style.transform = `translate(${e[3]}vw, ${e[4]}vh) rotate(${e[5]}deg)`;
+        ).style.transform = `translate(${e[3]}vw, ${e[4]}vw) rotate(${e[5]}deg)`;
         setTimeout(()=>{
             winAudio.play();
         },300)
